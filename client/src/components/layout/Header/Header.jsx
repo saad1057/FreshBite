@@ -38,7 +38,8 @@ export default function Header() {
             <ul className="nav-list">
               <li><Link to="/how-it-works" className="nav-link">How It Works</Link></li>
               <li><Link to="/meals" className="nav-link">Meals</Link></li>
-              <li><Link to="/pricing" className="nav-link">Pricing</Link></li>
+              <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
+              <li><Link to="/about" className="nav-link">About Us</Link></li>
             </ul>
           </nav>
 
@@ -59,7 +60,8 @@ export default function Header() {
           <ul className="mobile-nav-list">
             <li><Link to="/how-it-works" onClick={() => setIsMenuOpen(false)}>How It Works</Link></li>
             <li><Link to="/meals" onClick={() => setIsMenuOpen(false)}>Meals</Link></li>
-            <li><Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link></li>
+            <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
+            <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li className="mobile-auth">
               <Link to="/login" className="mobile-login" onClick={() => setIsMenuOpen(false)}>Log In</Link>
               <Link to="/signup" className="mobile-signup" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>

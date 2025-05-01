@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
@@ -39,4 +39,27 @@
 
 .read-the-docs {
   color: #888;
+}
+
+body, html, #root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', Arial, sans-serif;
+  background: #f8f9fa;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
 }

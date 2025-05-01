@@ -1,0 +1,74 @@
+.meals-page {
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background: #f8f9fa;
+    padding-bottom: 4rem;
+}
+
+.meals-hero {
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.meals-hero h1 {
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.meals-hero p {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 0;
+}
+
+.meals-grid {
+    max-width: 1300px;
+    margin: 3rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding: 0 2rem;
+}
+
+.meal-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.meal-card:hover {
+    box-shadow: 0 8px 24px rgba(46,139,87,0.10);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.meal-img {
+    width: 100%;
+    max-width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+}
+
+.meal-card h3 {
+    color: #2e8b57;
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.meal-card p {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-family: 'Lato', Arial, sans-serif;
+} 

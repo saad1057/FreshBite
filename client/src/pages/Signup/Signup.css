@@ -1,0 +1,75 @@
+.auth-page {
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.auth-form {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.auth-form h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: #222;
+    text-align: center;
+}
+
+.auth-form input {
+    padding: 0.9rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.auth-form input:focus {
+    border-color: #2e8b57;
+}
+
+.primary-button {
+    background: #2e8b57;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.primary-button:hover {
+    background: #267349;
+}
+
+.switch-link {
+    text-align: center;
+    font-size: 1rem;
+    color: #444;
+}
+
+.switch-link a {
+    color: #2e8b57;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+} 

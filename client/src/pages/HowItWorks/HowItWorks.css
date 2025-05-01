@@ -1,0 +1,71 @@
+.howitworks-page {
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background: #f8f9fa;
+    padding-bottom: 4rem;
+}
+
+.hiw-hero {
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.hiw-hero h1 {
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.hiw-hero p {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 0;
+}
+
+.hiw-steps {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.hiw-step {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 320px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.hiw-step:hover {
+    box-shadow: 0 8px 24px rgba(46,139,87,0.10);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.hiw-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.hiw-step h3 {
+    font-size: 1.3rem;
+    color: #2e8b57;
+    margin-bottom: 0.7rem;
+}
+
+.hiw-step p {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.5;
+} 
