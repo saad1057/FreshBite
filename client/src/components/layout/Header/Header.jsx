@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+  const navigate = useNavigate();
 
   // Handle scroll events for shadow effect
   useEffect(() => {
@@ -20,8 +22,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Check login state on mount
+  useEffect(() => {
+    const storedUser = localStorage.getItem('userInfo');
+    setUserInfo(storedUser ? JSON.parse(storedUser) : null);
+  }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('userInfo');
+    setUserInfo(null);
+    navigate('/');
   };
 
   return (
@@ -36,6 +50,7 @@ export default function Header() {
         <div className="header-right">
           <nav className="main-nav">
             <ul className="nav-list">
+              <li><Link to="/" className="nav-link">Home</Link></li>
               <li><Link to="/how-it-works" className="nav-link">How It Works</Link></li>
               <li><Link to="/meals" className="nav-link">Meals</Link></li>
               <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
@@ -44,8 +59,14 @@ export default function Header() {
           </nav>
 
           <div className="auth-actions">
-            <Link to="/login" className="login-btn">Log In</Link>
-            <Link to="/signup" className="signup-btn">Sign Up</Link>
+            {userInfo ? (
+              <button onClick={handleLogout} className="logout-btn">Logout</button>
+            ) : (
+              <>
+                <Link to="/login" className="login-btn">Log In</Link>
+                <Link to="/signup" className="signup-btn">Sign Up</Link>
+              </>
+            )}
           </div>
 
           <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Menu">
@@ -58,13 +79,20 @@ export default function Header() {
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav">
           <ul className="mobile-nav-list">
+            <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li><Link to="/how-it-works" onClick={() => setIsMenuOpen(false)}>How It Works</Link></li>
             <li><Link to="/meals" onClick={() => setIsMenuOpen(false)}>Meals</Link></li>
             <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
             <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li className="mobile-auth">
-              <Link to="/login" className="mobile-login" onClick={() => setIsMenuOpen(false)}>Log In</Link>
-              <Link to="/signup" className="mobile-signup" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
+              {userInfo ? (
+                <button onClick={() => { setIsMenuOpen(false); handleLogout(); }} className="mobile-logout">Logout</button>
+              ) : (
+                <>
+                  <Link to="/login" className="mobile-login" onClick={() => setIsMenuOpen(false)}>Log In</Link>
+                  <Link to="/signup" className="mobile-signup" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
+                </>
+              )}
             </li>
           </ul>
         </nav>

@@ -8,6 +8,13 @@ import Contact from './pages/Contact/Contact';
 import Meals from './pages/Meals/Meals';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
+import Careers from './pages/Careers/Careers';
+import Press from './pages/Press/Press';
+import Sustainability from './pages/Sustainability/Sustainability';
+import Blog from './pages/Blog/Blog';
+import Recipes from './pages/Recipes/Recipes';
+import FAQ from './pages/FAQ/FAQ';
+import HelpCenter from './pages/HelpCenter/HelpCenter';
 
 function Layout({ children, hideFooter }) {
   return (
@@ -69,6 +76,41 @@ export default function App() {
         <Route path="/contact" element={
           <Layout>
             <Contact />
+          </Layout>
+        } />
+        <Route path="/careers" element={
+          <Layout>
+            <Careers />
+          </Layout>
+        } />
+        <Route path="/press" element={
+          <Layout>
+            <Press />
+          </Layout>
+        } />
+        <Route path="/sustainability" element={
+          <Layout>
+            <Sustainability />
+          </Layout>
+        } />
+        <Route path="/blog" element={
+          <Layout>
+            <Blog />
+          </Layout>
+        } />
+        <Route path="/recipes" element={
+          <Layout>
+            <Recipes />
+          </Layout>
+        } />
+        <Route path="/faq" element={
+          <Layout>
+            <FAQ />
+          </Layout>
+        } />
+        <Route path="/help-center" element={
+          <Layout>
+            <HelpCenter />
           </Layout>
         } />
       </Routes>
