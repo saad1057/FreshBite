@@ -1,0 +1,139 @@
+.admin-page {
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background: #f8f9fa;
+    padding-bottom: 4rem;
+}
+
+.admin-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 3rem auto 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 2.5rem 2rem;
+}
+
+.admin-page h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.admin-page h2 {
+  font-size: 1.5rem;
+  color: #2e8b57;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.admin-add-user-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.admin-add-user-form input[type='text'],
+.admin-add-user-form input[type='email'],
+.admin-add-user-form input[type='password'] {
+  margin-bottom: 0;
+  min-width: 140px;
+}
+
+.admin-add-user-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1rem;
+}
+
+.admin-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.admin-page th, .admin-page td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.admin-page th {
+  background: #e9ecef;
+  font-weight: 600;
+}
+
+.admin-page tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-page input[type='checkbox'] {
+  transform: scale(1.2);
+  margin-right: 0.5rem;
+}
+
+.admin-page button {
+  background: #2e8b57;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin-page button:hover {
+  background: #267349;
+}
+
+.admin-page button.delete-btn {
+  background: #d30505;
+  color: #ffffff;
+  border: 1px solid #e74c3c;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-page button.delete-btn:hover {
+  background: #8d2d22;
+  color: #fff;
+}
+
+.admin-page .error-message {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .admin-content {
+    padding: 2rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-content {
+    padding: 1rem 0.2rem;
+  }
+  .admin-add-user-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .admin-page table, .admin-page th, .admin-page td {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+} 

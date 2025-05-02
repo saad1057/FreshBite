@@ -22,10 +22,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Check login state on mount
+  // Check login state on mount and when localStorage changes
   useEffect(() => {
     const storedUser = localStorage.getItem('userInfo');
     setUserInfo(storedUser ? JSON.parse(storedUser) : null);
+    // Listen for storage changes (multi-tab support)
+    const handleStorage = () => {
+      const updatedUser = localStorage.getItem('userInfo');
+      setUserInfo(updatedUser ? JSON.parse(updatedUser) : null);
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
   }, []);
 
   const toggleMenu = () => {
@@ -33,9 +40,11 @@ export default function Header() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('userInfo');
-    setUserInfo(null);
-    navigate('/');
+    if (window.confirm('Are you sure you want to logout?')) {
+      localStorage.removeItem('userInfo');
+      setUserInfo(null);
+      navigate('/');
+    }
   };
 
   return (
@@ -55,6 +64,9 @@ export default function Header() {
               <li><Link to="/meals" className="nav-link">Meals</Link></li>
               <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
               <li><Link to="/about" className="nav-link">About Us</Link></li>
+              {userInfo && userInfo.isAdmin && (
+                <li><Link to="/admin" className="nav-link">Admin</Link></li>
+              )}
             </ul>
           </nav>
 
@@ -84,9 +96,20 @@ export default function Header() {
             <li><Link to="/meals" onClick={() => setIsMenuOpen(false)}>Meals</Link></li>
             <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
             <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+            {userInfo && userInfo.isAdmin && (
+              <li><Link to="/admin" className="mobile-login" onClick={() => setIsMenuOpen(false)}>Admin</Link></li>
+            )}
             <li className="mobile-auth">
               {userInfo ? (
-                <button onClick={() => { setIsMenuOpen(false); handleLogout(); }} className="mobile-logout">Logout</button>
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    handleLogout();
+                  }}
+                  className="mobile-logout"
+                >
+                  Logout
+                </button>
               ) : (
                 <>
                   <Link to="/login" className="mobile-login" onClick={() => setIsMenuOpen(false)}>Log In</Link>

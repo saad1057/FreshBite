@@ -15,6 +15,7 @@ import Blog from './pages/Blog/Blog';
 import Recipes from './pages/Recipes/Recipes';
 import FAQ from './pages/FAQ/FAQ';
 import HelpCenter from './pages/HelpCenter/HelpCenter';
+import Admin from './pages/Admin/Admin';
 
 function Layout({ children, hideFooter }) {
   return (
@@ -111,6 +112,11 @@ export default function App() {
         <Route path="/help-center" element={
           <Layout>
             <HelpCenter />
+          </Layout>
+        } />
+        <Route path="/admin" element={
+          <Layout>
+            <Admin />
           </Layout>
         } />
       </Routes>
