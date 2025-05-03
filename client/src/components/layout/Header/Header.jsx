@@ -63,6 +63,7 @@ export default function Header() {
               <li><Link to="/" className="nav-link">Home</Link></li>
               <li><Link to="/how-it-works" className="nav-link">How It Works</Link></li>
               <li><Link to="/meals" className="nav-link">Meals</Link></li>
+              <li><Link to="/blog" className="nav-link">Blog</Link></li>
               <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
               <li><Link to="/about" className="nav-link">About Us</Link></li>
               {userInfo && userInfo.isAdmin && (
@@ -95,6 +96,7 @@ export default function Header() {
             <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li><Link to="/how-it-works" onClick={() => setIsMenuOpen(false)}>How It Works</Link></li>
             <li><Link to="/meals" onClick={() => setIsMenuOpen(false)}>Meals</Link></li>
+            <li><Link to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
             <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
             <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             {userInfo && userInfo.isAdmin && (

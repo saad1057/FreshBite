@@ -2,14 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
+const foodIcons = [
+  '🥗', '🍅', '🍋', '🥑', '🍞', '🥕', '🧀', '🍗'
+];
+
 const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg-shape"></div>
+        <div className="hero-bg-shape-2"></div>
+        <div className="hero-floating-icons">
+          {foodIcons.map((icon, i) => (
+            <span className={`floating-icon floating-icon-${i}`} key={i}>{icon}</span>
+          ))}
+        </div>
         <div className="hero-content">
-          <h1 className="hero-headline">CHECK OUT WHAT'S NEW AT FRESHBITE</h1>
+          <h1 className="hero-headline">
+            <span className="headline-accent">CHECK OUT</span> WHAT'S NEW AT <span className="headline-accent">FRESHBITE</span>
+          </h1>
           <p className="hero-subheadline">Delicious, chef-prepared meals delivered to your door. No shopping, no prep, no hassle.</p>
           <div className="trust-bar">
             <span className="star">★</span>
@@ -27,7 +39,7 @@ const Home = () => {
           </ul>
           <div className="hero-buttons">
             <Link to="/meals" className="primary-button">Explore Our Meals</Link>
-            <Link to="/how-it-works" className="secondary-button">Learn More</Link>
+            <Link to="/how-it-works" className="primary-button">Learn More</Link>
           </div>
         </div>
       </section>
@@ -35,20 +47,20 @@ const Home = () => {
       {/* Features Section */}
       <section className="features">
         <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🥗</div>
+          <div className="feature-card feature-card-green">
+            <div className="feature-icon-bg"><span className="feature-icon">🥗</span></div>
             <h3>Chef-Prepared</h3>
             <p>Our meals are crafted by professional chefs using the freshest ingredients and innovative recipes.</p>
           </div>
 
-          <div className="feature-card">
-            <div className="feature-icon">⏰</div>
+          <div className="feature-card feature-card-yellow">
+            <div className="feature-icon-bg"><span className="feature-icon">⏰</span></div>
             <h3>Ready in Minutes</h3>
             <p>All meals arrive ready to heat and serve in under 5 minutes, perfect for busy schedules.</p>
           </div>
 
-          <div className="feature-card">
-            <div className="feature-icon">🥬</div>
+          <div className="feature-card feature-card-pink">
+            <div className="feature-icon-bg"><span className="feature-icon">🥬</span></div>
             <h3>Fresh Ingredients</h3>
             <p>We use only the highest quality, seasonal ingredients for maximum flavor and nutrition.</p>
           </div>
@@ -57,14 +69,16 @@ const Home = () => {
 
       {/* Testimonial/Trust Bar Section */}
       <section className="testimonial-bar">
+        <div className="testimonial-bar-bg"></div>
         <div className="testimonial-content">
-          <span className="testimonial-quote">“FreshBite makes dinner time so easy and delicious! Highly recommend.”</span>
+          <span className="testimonial-quote"><span className="quote-icon">“</span>FreshBite makes dinner time so easy and delicious! Highly recommend.”</span>
           <span className="testimonial-author">- Sarah K.</span>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="cta">
+        <div className="cta-pattern"></div>
         <div className="cta-content">
           <h2>Start your healthy eating journey today</h2>
           <p>Get 50% off your first order</p>
