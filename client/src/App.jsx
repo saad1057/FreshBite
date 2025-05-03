@@ -17,6 +17,7 @@ import FAQ from './pages/FAQ/FAQ';
 import HelpCenter from './pages/HelpCenter/HelpCenter';
 import Admin from './pages/Admin/Admin';
 
+
 function Layout({ children, hideFooter }) {
   return (
     <div className="app">

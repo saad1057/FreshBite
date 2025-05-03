@@ -28,7 +28,7 @@ export default function Footer() {
             <div className="footer-column">
               <h3 className="footer-heading">Company</h3>
               <ul className="footer-links">
-                <li><Link to="/about-us">About Us</Link></li>
+                <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/careers">Careers</Link></li>
                 <li><Link to="/press">Press</Link></li>
                 <li><Link to="/sustainability">Sustainability</Link></li>
@@ -38,7 +38,6 @@ export default function Footer() {
             <div className="footer-column">
               <h3 className="footer-heading">Learn More</h3>
               <ul className="footer-links">
-                <li><Link to="/gift-cards">Gift Cards</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/recipes">Recipes</Link></li>
                 <li><Link to="/faq">FAQ</Link></li>
@@ -48,7 +47,7 @@ export default function Footer() {
             <div className="footer-column">
               <h3 className="footer-heading">Connect</h3>
               <ul className="footer-links">
-                <li><Link to="/contact-us">Contact Us</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
                 <li><Link to="/help-center">Help Center</Link></li>
               </ul>
               
