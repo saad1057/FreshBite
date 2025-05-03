@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
+import logo2 from '../../../assets/images/logo4.png';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,7 +53,7 @@ export default function Header() {
       <div className="header-inner">
         <div className="header-left">
           <Link to="/" className="logo">
-            FreshBite
+            <img src={logo2} alt="FreshBite Logo" style={{ height: "40px", width: "auto" }} />
           </Link>
         </div>
 

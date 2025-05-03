@@ -33,11 +33,20 @@
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
     color: #2e8b57;
     text-decoration: none;
     letter-spacing: -0.5px;
+    height: 48px;
+}
+
+.logo img {
+    display: block;
+    height: 40px;
+    width: auto;
 }
 
 .main-nav .nav-list {
@@ -88,10 +97,26 @@
     text-decoration: none;
     transition: all 0.2s ease;
     padding: 0.5rem 0.75rem;
+    position: relative;
+}
+
+.login-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2e8b57;
+    transition: width 0.3s ease;
 }
 
 .login-btn:hover {
     color: #2e8b57;
+}
+
+.login-btn:hover::after {
+    width: 100%;
 }
 
 .signup-btn {
@@ -106,6 +131,7 @@
 
 .signup-btn:hover {
     background-color: #267349;
+    color: antiquewhite;
 }
 
 /* Mobile menu toggle */

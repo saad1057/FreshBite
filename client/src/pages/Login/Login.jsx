@@ -28,30 +28,48 @@ const Login = () => {
 
   return (
     <div className="auth-page">
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <h2>Log In</h2>
-        {error && <div className="error-message">{error}</div>}
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit" className="primary-button">Log In</button>
-        <p className="switch-link">
-          Don't have an account? <Link to="/signup">Sign Up</Link>
-        </p>
-      </form>
+      <div className="auth-bg-shape"></div>
+      <div className="auth-bg-shape-2"></div>
+      <div className="auth-container">
+        <div className="auth-card">
+          <div className="auth-header">
+            <h2>Welcome Back</h2>
+            <p>Log in to your FreshBite account</p>
+          </div>
+          <form className="auth-form" onSubmit={handleSubmit}>
+            {error && <div className="error-message">{error}</div>}
+            <div className="input-group">
+              <span className="input-icon">📧</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="input-group">
+              <span className="input-icon">🔒</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit" className="primary-button">Log In</button>
+            <div className="auth-divider">
+              <span>or</span>
+            </div>
+            <p className="switch-link">
+              Don't have an account? <Link to="/signup">Sign Up</Link>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

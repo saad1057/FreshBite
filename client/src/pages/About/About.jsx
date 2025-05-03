@@ -3,11 +3,17 @@ import './About.css';
 
 const About = () => (
   <div className="about-page">
+    <div className="about-bg-shape"></div>
     <section className="about-hero">
       <h1>About FreshBite</h1>
       <p>We're passionate about making healthy eating easy, delicious, and accessible for everyone.</p>
     </section>
-
+    <div className="about-highlight-bar">
+      <span className="about-pill">🥗 Chef-Prepared</span>
+      <span className="about-pill">🌱 Fresh Ingredients</span>
+      <span className="about-pill">🚚 Fast Delivery</span>
+      <span className="about-pill">⭐ 4.8/5 Rated</span>
+    </div>
     <section className="about-mission">
       <h2>Our Mission</h2>
       <p>

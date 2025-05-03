@@ -17,6 +17,7 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <div className="contact-bg-shape"></div>
       <section className="contact-hero">
         <h1>Contact Us</h1>
         <p>Have a question or feedback? We'd love to hear from you!</p>
@@ -50,10 +51,11 @@ const Contact = () => {
           <button type="submit" className="primary-button">Send Message</button>
           {submitted && <div className="contact-success">Thank you! We'll get back to you soon.</div>}
         </form>
+        <div className="contact-divider" />
         <div className="contact-info">
           <h3>Or reach us at:</h3>
-          <p>Email: support@freshbite.com</p>
-          <p>Phone: (123) 456-7890</p>
+          <p><span className="contact-icon">📧</span> support@freshbite.com</p>
+          <p><span className="contact-icon">📞</span> (123) 456-7890</p>
         </div>
       </div>
     </div>
