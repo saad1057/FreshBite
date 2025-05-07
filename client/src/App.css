@@ -63,3 +63,15 @@ h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
 * {
   box-sizing: border-box;
 }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

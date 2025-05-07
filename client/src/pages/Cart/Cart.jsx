@@ -79,20 +79,20 @@ export default function Cart() {
                   {cart.map(item => (
                     <tr key={item.name}>
                       <td>{item.name}</td>
-                      <td>₹{item.price}</td>
+                      <td>Rs.{item.price}</td>
                       <td>{item.quantity}</td>
                       <td>
                         <button className="qty-btn" onClick={() => decreaseQty(item.name)} disabled={item.quantity === 1}>-</button>
                         <span className="qty-value">{item.quantity}</span>
                         <button className="qty-btn" onClick={() => increaseQty(item.name)}>+</button>
                       </td>
-                      <td>₹{item.price * item.quantity}</td>
+                      <td>Rs.{item.price * item.quantity}</td>
                       <td><button className="remove-btn" onClick={() => removeItem(item.name)}>Remove</button></td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <div className="cart-total">Total: <span>₹{total}</span></div>
+              <div className="cart-total">Total: <span>Rs.{total}</span></div>
             </div>
             <div className="cart-actions">
               <button className="clear-cart-btn" onClick={clearCart}>Clear Cart</button>
@@ -103,4 +103,4 @@ export default function Cart() {
       </div>
     </div>
   );
-} 
+}

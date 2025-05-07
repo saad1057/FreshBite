@@ -1,7 +1,9 @@
 .receipt-page {
   min-height: 100vh;
   background: #f8f9fa;
-  padding: 3rem 0 4rem 0;
+  padding-bottom: 4rem;
+  width: 100vw;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;

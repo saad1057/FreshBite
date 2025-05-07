@@ -14,6 +14,15 @@ import dalChawal from '../../assets/images/Daal-Chawal.jpg';
 import seekhKebab from '../../assets/images/seekh_kabab.jpeg';
 import sindhiBiryani from '../../assets/images/sindhi_biryani.jpg';
 
+// Assign random prices to meals
+const priceOptions = [350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950];
+function getRandomPrice(usedPrices) {
+  const available = priceOptions.filter(p => !usedPrices.includes(p));
+  if (available.length === 0) return priceOptions[Math.floor(Math.random() * priceOptions.length)];
+  return available[Math.floor(Math.random() * available.length)];
+}
+const usedPrices = [];
+
 const meals = [
   {
     name: 'Grilled Chicken Bowl',
@@ -23,7 +32,7 @@ const meals = [
     calories: 520,
     difficulty: 'Easy',
     subtitle: 'with Brown Rice & Tangy Sauce',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Chicken Breast', amount: '200g' },
       { name: 'Brown Rice', amount: '1 cup' },
@@ -51,7 +60,7 @@ const meals = [
     calories: 480,
     difficulty: 'Medium',
     subtitle: 'with Roasted Veggies',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Salmon Fillet', amount: '180g' },
       { name: 'Quinoa', amount: '1 cup' },
@@ -79,7 +88,7 @@ const meals = [
     calories: 410,
     difficulty: 'Easy',
     subtitle: 'with Chickpeas & Tahini',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Chickpeas', amount: '1 cup' },
       { name: 'Sweet Potato', amount: '1 medium' },
@@ -107,7 +116,7 @@ const meals = [
     calories: 540,
     difficulty: 'Medium',
     subtitle: 'with Jasmine Rice',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Beef Strips', amount: '200g' },
       { name: 'Jasmine Rice', amount: '1 cup' },
@@ -135,7 +144,7 @@ const meals = [
     calories: 390,
     difficulty: 'Easy',
     subtitle: 'with Fresh Veggies',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Pasta', amount: '120g' },
       { name: 'Mixed Veggies', amount: '1 cup' },
@@ -163,7 +172,7 @@ const meals = [
     calories: 350,
     difficulty: 'Easy',
     subtitle: 'with Grilled Chicken',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Chicken Breast', amount: '120g' },
       { name: 'Romaine Lettuce', amount: '1 cup' },
@@ -191,7 +200,7 @@ const meals = [
     calories: 600,
     difficulty: 'Hard',
     subtitle: 'with Basmati Rice',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Chicken', amount: '200g' },
       { name: 'Basmati Rice', amount: '1 cup' },
@@ -219,7 +228,7 @@ const meals = [
     calories: 700,
     difficulty: 'Hard',
     subtitle: 'with Naan',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Beef', amount: '250g' },
       { name: 'Nihari Masala', amount: '1 tbsp' },
@@ -247,7 +256,7 @@ const meals = [
     calories: 520,
     difficulty: 'Medium',
     subtitle: 'with Tomatoes & Chilies',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Chicken', amount: '200g' },
       { name: 'Tomatoes', amount: '2 medium' },
@@ -275,7 +284,7 @@ const meals = [
     calories: 480,
     difficulty: 'Medium',
     subtitle: 'with Fried Onions',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Meat', amount: '150g' },
       { name: 'Wheat', amount: '1/2 cup' },
@@ -303,7 +312,7 @@ const meals = [
     calories: 420,
     difficulty: 'Medium',
     subtitle: 'with Chutney',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Minced Meat', amount: '200g' },
       { name: 'Spices', amount: '1 tbsp' },
@@ -331,7 +340,7 @@ const meals = [
     calories: 510,
     difficulty: 'Medium',
     subtitle: 'with Potatoes',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Ground Beef', amount: '200g' },
       { name: 'Potatoes', amount: '2 small' },
@@ -359,7 +368,7 @@ const meals = [
     calories: 400,
     difficulty: 'Easy',
     subtitle: 'with Spinach & Paneer',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Spinach', amount: '2 cups' },
       { name: 'Paneer', amount: '100g' },
@@ -387,7 +396,7 @@ const meals = [
     calories: 350,
     difficulty: 'Easy',
     subtitle: 'with Steamed Rice',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Lentils', amount: '1 cup' },
       { name: 'Rice', amount: '1 cup' },
@@ -415,7 +424,7 @@ const meals = [
     calories: 430,
     difficulty: 'Medium',
     subtitle: 'with Raita',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Minced Meat', amount: '200g' },
       { name: 'Spices', amount: '1 tbsp' },
@@ -443,7 +452,7 @@ const meals = [
     calories: 650,
     difficulty: 'Hard',
     subtitle: 'with Potatoes & Chicken',
-    price: 499,
+    price: (() => { const p = getRandomPrice(usedPrices); usedPrices.push(p); return p; })(),
     ingredients: [
       { name: 'Chicken', amount: '200g' },
       { name: 'Basmati Rice', amount: '1 cup' },
@@ -501,7 +510,7 @@ const Meals = () => {
             <img src={meal.img} alt={meal.name} className="meal-img" />
             <h3>{meal.name}</h3>
             <p>{meal.desc}</p>
-            <div className="meal-price">₹{meal.price}</div>
+            <div className="meal-price">PKR {meal.price}</div>
             <div className="meal-card-actions">
               <button className="meal-details-btn" onClick={() => setModalMeal(meal)}>View Details</button>
               <button className="meal-add-to-cart-btn" onClick={() => addToCart(meal)}>Add to Cart</button>

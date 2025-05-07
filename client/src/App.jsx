@@ -22,15 +22,27 @@ import Checkout from './pages/Checkout/Checkout';
 import Receipt from './pages/Receipt/Receipt';
 
 
+// function Layout({ children, hideFooter }) {
+//   return (
+//     <div className="app">
+//       <Header />
+//       <main>{children}</main>
+//       {!hideFooter && <Footer />}
+//     </div>
+//   );
+// }
+
+
 function Layout({ children, hideFooter }) {
   return (
-    <div className="app">
+    <div className="app-container">
       <Header />
-      <main>{children}</main>
+      <main className="main-content">{children}</main>
       {!hideFooter && <Footer />}
     </div>
   );
 }
+
 
 function AuthLayout({ children }) {
   return (

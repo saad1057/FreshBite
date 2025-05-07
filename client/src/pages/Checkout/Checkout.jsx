@@ -57,7 +57,7 @@ export default function Checkout() {
         <div className="progress-line done"></div>
         <div className="progress-step active">Checkout</div>
         <div className="progress-line"></div>
-        <div className="progress-step">Select Meals</div>
+        
       </div>
       <div className="checkout-columns">
         {/* Left: Shipping Form */}
@@ -96,14 +96,14 @@ export default function Checkout() {
             {cart.map(item => (
               <li key={item.name} className="checkout-item">
                 <span>{item.name} x {item.quantity}</span>
-                <span>₹{item.price * item.quantity}</span>
+                <span>Rs.{item.price * item.quantity}</span>
               </li>
             ))}
           </ul>
           <div className="checkout-summary-details">
             <div className="checkout-summary-row">
               <span>Box price</span>
-              <span>₹{total}</span>
+              <span>Rs.{total}</span>
             </div>
             <div className="checkout-summary-row">
               <span>First box shipping</span>
@@ -111,18 +111,18 @@ export default function Checkout() {
             </div>
             <div className="checkout-summary-row">
               <span>Tax</span>
-              <span>₹0.00</span>
+              <span>Rs.0.00</span>
             </div>
             <div className="checkout-summary-row">
               <span>First box discount</span>
-              <span className="checkout-discount">-₹0.00</span>
+              <span className="checkout-discount">-Rs.0.00</span>
             </div>
             <div className="checkout-summary-row">
               <span>Apply promo code</span>
               <input type="text" className="checkout-promo-input" placeholder="Promo code" disabled />
             </div>
           </div>
-          <div className="checkout-total">Total: <span>₹{total}</span></div>
+          <div className="checkout-total">Total: <span>Rs.{total}</span></div>
           <div className="checkout-guarantee">
             <span role="img" aria-label="guarantee">🛡️</span> 100% Money-Back Guarantee<br />Don't love your first box? We'll refund it.
           </div>
@@ -130,4 +130,4 @@ export default function Checkout() {
       </div>
     </div>
   );
-} 
+}
