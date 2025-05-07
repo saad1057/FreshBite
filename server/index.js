@@ -4,6 +4,9 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const mealRoutes = require('./routes/mealRoutes');
+const contactRoutes = require('./routes/contactRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const path = require('path');
 
 // Initialize app
 const app = express();
@@ -24,6 +27,8 @@ app.get('/', (req, res) => {
 // Use the routes
 app.use('/api', userRoutes);
 app.use('/api', mealRoutes);
+app.use('/api/contact', contactRoutes);
+app.use('/api', orderRoutes);
 
 // Server Listen
 const PORT = process.env.PORT || 5000;

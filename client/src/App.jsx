@@ -16,6 +16,10 @@ import Recipes from './pages/Recipes/Recipes';
 import FAQ from './pages/FAQ/FAQ';
 import HelpCenter from './pages/HelpCenter/HelpCenter';
 import Admin from './pages/Admin/Admin';
+import Profile from './pages/Profile/Profile';
+import Cart from './pages/Cart/Cart';
+import Checkout from './pages/Checkout/Checkout';
+import Receipt from './pages/Receipt/Receipt';
 
 
 function Layout({ children, hideFooter }) {
@@ -118,6 +122,22 @@ export default function App() {
         <Route path="/admin" element={
           <Layout>
             <Admin />
+          </Layout>
+        } />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/cart" element={
+          <Layout>
+            <Cart />
+          </Layout>
+        } />
+        <Route path="/checkout" element={
+          <Layout>
+            <Checkout />
+          </Layout>
+        } />
+        <Route path="/receipt" element={
+          <Layout>
+            <Receipt />
           </Layout>
         } />
       </Routes>

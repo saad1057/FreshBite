@@ -21,6 +21,8 @@ const userSchema = mongoose.Schema({
     required: true,
     default: false,
   },
+  profilePic: { type: String, default: '' },
+  lastName: { type: String },
 }, {
   timestamps: true, // Automatically adds createdAt and updatedAt fields
 });

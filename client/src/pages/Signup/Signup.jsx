@@ -28,6 +28,7 @@ const Signup = () => {
 
   return (
     <div className="auth-page">
+      <button className="back-arrow-btn" onClick={() => navigate(-1)} title="Go back">←</button>
       <div className="auth-bg-shape"></div>
       <div className="auth-bg-shape-2"></div>
       <div className="auth-container">
@@ -71,7 +72,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <button type="submit" className="primary-button">Sign Up</button>
+            <button type="submit" className="primary-button-signup">Sign Up</button>
             <div className="auth-divider">
               <span>or</span>
             </div>

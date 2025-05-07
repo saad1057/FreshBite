@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo2 from '../../../assets/images/logo4.png';
 
@@ -7,7 +7,9 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
+  const [cartCount, setCartCount] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Handle scroll events for shadow effect
   useEffect(() => {
@@ -34,6 +36,22 @@ export default function Header() {
     };
     window.addEventListener('storage', handleStorage);
     return () => window.removeEventListener('storage', handleStorage);
+  }, []);
+
+  // Update cart count on mount and when localStorage changes
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      setCartCount(count);
+    };
+    updateCartCount();
+    window.addEventListener('storage', updateCartCount);
+    window.addEventListener('cartUpdated', updateCartCount);
+    return () => {
+      window.removeEventListener('storage', updateCartCount);
+      window.removeEventListener('cartUpdated', updateCartCount);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -72,9 +90,26 @@ export default function Header() {
             </ul>
           </nav>
 
+          {userInfo && !location.pathname.startsWith('/admin') && (
+            <Link to="/cart" className="cart-btn">
+              <span className="cart-icon">🛒</span>
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+            </Link>
+          )}
+
           <div className="auth-actions">
             {userInfo ? (
-              <button onClick={handleLogout} className="logout-btn">Logout</button>
+              <>
+                <Link to="/profile" className="profile-icon-btn">
+                  {userInfo.profilePic ? (
+                    <img src={userInfo.profilePic} alt="Profile" className="header-profile-pic" />
+                  ) : (
+                    <span className="header-profile-avatar">👤</span>
+                  )}
+                  <span className="header-profile-name">{userInfo.name}</span>
+                </Link>
+                <button onClick={handleLogout} className="logout-btn">Logout</button>
+              </>
             ) : (
               <>
                 <Link to="/login" className="login-btn">Log In</Link>

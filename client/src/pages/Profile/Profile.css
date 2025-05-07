@@ -1,0 +1,215 @@
+.profile-outer-bg {
+  min-height: 100vh;
+  background: #fcfaf6;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+}
+.profile-layout {
+  display: flex;
+  width: 100vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #fcfaf6;
+}
+.profile-sidebar {
+  width: 270px;
+  background: #fcfaf6;
+  padding: 3rem 0 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sidebar-item {
+  font-size: 1.15rem;
+  color: #222;
+  padding: 1rem 1.5rem;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  max-width: 200px;
+  margin-bottom: 0.5rem;
+  background: none;
+  border-left: 6px solid transparent;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.sidebar-item.active {
+  background: #d6f5d6;
+  color: #222;
+  font-weight: 700;
+  border-left: 6px solid #b6f36b;
+  margin-top: 2.5rem;
+}
+.sidebar-icon {
+  font-size: 1.3rem;
+}
+.profile-main {
+  flex: 1;
+  padding: 3.5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fcfaf6;
+}
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  width: 100%;
+  max-width: 700px;
+  color: #222;
+}
+.profile-section {
+  background: #fff;
+  border-radius: 10px;
+  border: 1.5px solid #e6e6e6;
+  box-shadow: 0 2px 8px rgba(46,139,87,0.04);
+  padding: 2.2rem 2.5rem 1.7rem 2.5rem;
+  margin-bottom: 2.2rem;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+.profile-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.profile-section-header h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
+  color: #222;
+}
+.edit-btn {
+  background: none;
+  border: none;
+  color: #222;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  padding: 0;
+}
+.edit-btn:hover {
+  color: #2e8b57;
+  text-decoration: underline;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.profile-info b {
+  font-size: 1.1rem;
+  color: #222;
+}
+.profile-success {
+  color: #2e8b57;
+  margin-top: 1rem;
+}
+.profile-error {
+  color: #dc3545;
+  margin-top: 1rem;
+}
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+.profile-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.profile-form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.2rem;
+}
+.profile-form-group input {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #e6e6e6;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  background: #fcfaf6;
+  transition: border 0.2s;
+}
+.profile-form-group input:focus {
+  border: 1.5px solid #b6f36b;
+  outline: none;
+}
+.profile-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.cancel-button {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #222;
+  border-radius: 7px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.cancel-button:hover {
+  background: #f5f5f5;
+  color: #111;
+  border: 1.5px solid #111;
+}
+.primary1-button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(46,139,87,0.08);
+}
+.primary1-button:hover {
+  background-color: #111;
+}
+.back-arrow-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: #fff;
+  border: 1.5px solid #e6e6e6;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.5rem;
+  color: #2e8b57;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(46,139,87,0.06);
+  transition: background 0.2s, border 0.2s;
+  z-index: 10;
+}
+.back-arrow-btn:hover {
+  background: #e6f9e6;
+  border: 1.5px solid #b6f36b;
+}
+
+

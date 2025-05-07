@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import axios from 'axios';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Here you would send the form data to your backend or email service
+    setError('');
+    try {
+      await axios.post('http://localhost:5000/api/contact', form);
+      setSubmitted(true);
+      setForm({ name: '', email: '', message: '' });
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -49,7 +57,16 @@ const Contact = () => {
             rows={5}
           />
           <button type="submit" className="primary-button">Send Message</button>
-          {submitted && <div className="contact-success">Thank you! We'll get back to you soon.</div>}
+          {submitted && (
+            <div className="contact-success" style={{ color: 'green', marginTop: '1rem', fontWeight: 'bold' }}>
+              Thank you! Your message has been submitted. Thanks for contacting us.
+            </div>
+          )}
+          {error && (
+            <div className="contact-error" style={{ color: 'red', marginTop: '1rem', fontWeight: 'bold' }}>
+              {error}
+            </div>
+          )}
         </form>
         <div className="contact-divider" />
         <div className="contact-info">

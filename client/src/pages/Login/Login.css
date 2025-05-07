@@ -113,7 +113,7 @@
     text-align: center;
 }
 
-.primary-button {
+.primary-button-login {
     background: #2e8b57;
     color: #fff;
     border: none;
@@ -126,7 +126,7 @@
     margin-top: 1rem;
 }
 
-.primary-button:hover {
+.primary-button-login:hover {
     background: #267349;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(46, 139, 87, 0.2);
